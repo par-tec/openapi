@@ -1,0 +1,35 @@
+description: |-
+  A skill object based on the ESCO data model.
+type: "object"
+additionalProperties: false
+example:
+  "altLabel": ["Ansible"]
+  "description": "The tool Ansible is a software program to perform configuration identification, control, status accounting and audit."
+  "label": "Ansible"
+  "skillType": "knowledge"
+  "uri": "http://data.europa.eu/esco/skill/6f8a40d6-f9ce-43ec-a72f-d4213a53f3ed"
+x-jsonld-type: "http://data.europa.eu/esco/skill"
+properties:
+  uri:
+    description: |
+      The URI or cURIe of the skill.
+      Note: a cURIe is not an URI, since it requires a context to be resolved.
+    type: "string"
+  label:
+    type: "string"
+    maxLength: 255
+  description:
+    type: "string"
+  altLabels:
+    type: "array"
+    items:
+      type: "string"
+      maxLength: 255
+  skillType:
+    description: |
+      The type of the skill.
+      Note: This is a controlled vocabulary.
+    type: "string"
+    enum:
+    - "knowledge"
+    - "skill"
